@@ -55,7 +55,7 @@ client.on("message", (message) => {
 		let name = message.author.username;
 		message.channel.send("Hola " + name);
 	}
-	 if (message.content.startsWith(config.prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
+	 if (msg.startsWith(config.prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         let cont = message.content.slice(config.prefix.length).split(" ");
         let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
