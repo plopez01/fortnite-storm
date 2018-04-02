@@ -13,33 +13,29 @@ client.on("message", (message) => {
 	if (message.content.startsWith(config.prefix + "sell")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
 		let atr = atributes.split(" ");
-		message.channel.send(message.author.username +  " vende un/a " + atr[0] + " con nivel " + atr[1] + " a cambio de " + atr[2]);
+		let name = message.author.username;
+		let image = message.author.avatarURL;
 		message.channel.send({embed: {
    					color: 3447003,
    					author: {
-      					name: client.user.username,
-      					icon_url: client.user.avatarURL
+      					name: name,
+      					icon_url: image
     					},
-    					title: "This is an embed",
-    					url: "http://google.com",
-    					description: "This is a test embed to showcase what they look like and what they can do.",
+    					title: "Venta",
+    					description: "Informacion sobre la venta.",
     					fields: [{
-        					name: "Fields",
-        					value: "They can have different fields with small headlines."
+        					name: "Objeto a la venta",
+        					value: atr[0] + " x" + atr[1]
       					},
       					{
-       					 name: "Masked links",
-        				 value: "You can put [masked links](http://google.com) inside of rich embeds."
-      					},
-      					{
-        				name: "Markdown",
-        				value: "You can put all the *usual* **__Markdown__** inside of them."
+        				name: "Objeto que se pide a cambio",
+        				value: atr[2] + " x" + atr[1]
       					}
     					],
     					timestamp: new Date(),
     					footer: {
       					icon_url: client.user.avatarURL,
-      					text: "© Example"
+      					text: "© Fortnite ESP"
     					}
   				}
 			});
