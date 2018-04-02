@@ -38,7 +38,7 @@ client.on("message", (message) => {
   				}
 			});
 		message.channel.send(" ").then(function (message) {
-		message.react("🤝")
+		message.react(".")
 	});
 	}
 
