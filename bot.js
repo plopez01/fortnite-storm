@@ -9,11 +9,6 @@ client.on('ready', () => {
 });
 
 
-client.on('messageReactionAdd', (reaction, user) => {
-    if(reaction.emoji.name === "🤝") {
-        console.log(reaction.users);
-    }
-});
 
 client.on("message", (message) => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
@@ -47,6 +42,11 @@ client.on("message", (message) => {
 		message.channel.send(".").then(function (message) {
 		message.react("🤝")
 	});
+		client.on('messageReactionAdd', (reaction, user) => {
+    		if(reaction.emoji.name === "🤝") {
+        	console.log(reaction.users);
+   		 }		
+		});
 	}
 
 	if (message.content.startsWith(config.prefix + "hola")) {
