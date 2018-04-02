@@ -51,7 +51,7 @@ client.on("message", (message) => {
 		let name = message.author.username;
 		message.channel.send("Hola " + name);
 	}
-	 if (message.startsWith(config.prefix + 'PURGE')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
+	 if (message.content.startsWith(config.prefix + 'PURGE')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         async function purge() {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
