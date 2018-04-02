@@ -13,7 +13,36 @@ client.on("message", (message) => {
 	if (message.content.startsWith(config.prefix + "sell")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
 		let atr = atributes.split(" ");
-		message.channel.send(message.author.username +  "vende un/a " + atr[0] + " con nivel " + atr[1] + " a cambio de " + atr[2]);
+		message.channel.send(message.author.username +  " vende un/a " + atr[0] + " con nivel " + atr[1] + " a cambio de " + atr[2]);
+		message.channel.send({embed: {
+   					color: 3447003,
+   					author: {
+      					name: client.user.username,
+      					icon_url: client.user.avatarURL
+    					},
+    					title: "This is an embed",
+    					url: "http://google.com",
+    					description: "This is a test embed to showcase what they look like and what they can do.",
+    					fields: [{
+        					name: "Fields",
+        					value: "They can have different fields with small headlines."
+      					},
+      					{
+       					 name: "Masked links",
+        				 value: "You can put [masked links](http://google.com) inside of rich embeds."
+      					},
+      					{
+        				name: "Markdown",
+        				value: "You can put all the *usual* **__Markdown__** inside of them."
+      					}
+    					],
+    					timestamp: new Date(),
+    					footer: {
+      					icon_url: client.user.avatarURL,
+      					text: "© Example"
+    					}
+  				}
+			});
 	}
 	if (message.content.startsWith(config.prefix + "hola")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
