@@ -83,7 +83,6 @@ client.on("message", (message) => {
         purge(); // Make sure this is inside the if(msg.startsWith)
 
     }
-});
 	
 });
 client.login(process.env.BOT_TOKEN); //Login del token
