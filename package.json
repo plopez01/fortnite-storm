@@ -1,0 +1,15 @@
+{
+  "name": "fortnite-storm",
+  "version": "1.0.0",
+  "description": "Bot para el servidor Fortnie storm",
+  "main": "bot.js",
+   "scripts": { "start": "node ./bot.js" },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Plopez",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
