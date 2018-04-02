@@ -53,7 +53,7 @@ client.on("message", (message) => {
 	}
 	 if (message.content.startsWith(config.prefix + 'PURGE')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
-        let cont = message.content.slice(prefix.length).split(" ");
+        let cont = message.content.slice(config.prefix.length).split(" ");
         let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
 
         async function purge() {
