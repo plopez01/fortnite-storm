@@ -37,7 +37,7 @@ client.on("message", (message) => {
     					}
   				}
 			});
-		message.reaction("👍")
+		message.reaction("👍");
 	}
 
 	if (message.content.startsWith(config.prefix + "hola")) {
