@@ -13,12 +13,11 @@ client.on("message", (message) => {
 	if (message.content.startsWith(config.prefix + "sell")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
 		let atr = atributes.split(" ");
-		let name = message.author.displayName;
-		message.channel.send(name +  "vende un/a " + atr[0] + " con nivel " + atr[1] + " a cambio de " + atr[2]);
+		message.channel.send(message.author.username +  "vende un/a " + atr[0] + " con nivel " + atr[1] + " a cambio de " + atr[2]);
 	}
 	if (message.content.startsWith(config.prefix + "hola")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
-		let name = message.author.displayName;
+		let name = message.author.username
 		message.channel.send("Hola " + name);
 	}
 	
