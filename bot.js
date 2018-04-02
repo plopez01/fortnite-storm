@@ -8,6 +8,13 @@ client.on('ready', () => {
 	console.log("Bot iniciado correctamente!");
 });
 
+
+client.on('messageReactionAdd', (reaction, user) => {
+    if(reaction.emoji.name === "🤝") {
+        console.log(reaction.users);
+    }
+});
+
 client.on("message", (message) => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 	if (message.content.startsWith(config.prefix + "sell")) {
