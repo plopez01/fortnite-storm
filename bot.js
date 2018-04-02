@@ -37,8 +37,11 @@ client.on("message", (message) => {
     					}
   				}
 			});
-		  message.react("👍")
-	}
+		setTimeout(function() {
+			message.react("👍");
+ 		 
+		}, 1000);
+		 
 	if (message.content.startsWith(config.prefix + "hola")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
 		let name = message.author.username
