@@ -12,9 +12,13 @@ client.on('ready', () => {
 
 client.on("message", (message) => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
-	if (message.content.startsWith(config.prefix + "sell")) {
+	
+	//Variables
+	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
+	
+	if (msg.startsWith(config.prefix + "SELL")) {
 		message.delete();
-		let atributes = message.content.split(config.prefix + "sell ")[1];
+		let atributes = msg.split(config.prefix + "SELL ")[1];
 		let atr = atributes.split(" ");
 		let name = message.author.username;
 		let image = message.author.avatarURL;
@@ -46,12 +50,12 @@ client.on("message", (message) => {
 		
 	}
 
-	if (message.content.startsWith(config.prefix + "hola")) {
+	if (msg.startsWith(config.prefix + "HOLA")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
 		let name = message.author.username;
 		message.channel.send("Hola " + name);
 	}
-	 if (message.content.startsWith(config.prefix + 'PURGE')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
+	 if (message.content.startsWith(config.prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         let cont = message.content.slice(config.prefix.length).split(" ");
         let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
