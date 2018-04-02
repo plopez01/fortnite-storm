@@ -38,6 +38,7 @@ client.on("message", (message) => {
   				}
 			});
 		message.reaction("👍");
+	}
 
 	if (message.content.startsWith(config.prefix + "hola")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
