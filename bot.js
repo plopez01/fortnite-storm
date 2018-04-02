@@ -13,11 +13,10 @@ client.on('ready', () => {
 client.on("message", (message) => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 	if (message.content.startsWith(config.prefix + "sell")) {
+		message.delete();
 		let atributes = message.content.split(config.prefix + "sell ")[1];
 		let atr = atributes.split(" ");
 		let name = message.author.username;
-		let messageauthot = message.author;
-		messageauthot.lastMessageID.delete;
 		let image = message.author.avatarURL;
 		message.channel.send({embed: {
    					color: 3447003,
