@@ -16,6 +16,8 @@ client.on("message", (message) => {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
 		let atr = atributes.split(" ");
 		let name = message.author.username;
+		let messageauthot = message.author;
+		messageauthot.lastMessage.delete;
 		let image = message.author.avatarURL;
 		message.channel.send({embed: {
    					color: 3447003,
