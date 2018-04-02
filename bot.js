@@ -21,8 +21,6 @@ client.on("message", (message) => {
       					name: name,
       					icon_url: image
     					},
-    					title: "Venta",
-    					description: "Informacion sobre la venta.",
     					fields: [{
         					name: "Objeto a la venta",
         					value: atr[0] + " x" + atr[1]
