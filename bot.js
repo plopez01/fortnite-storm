@@ -11,8 +11,8 @@ client.on('ready', () => {
 client.on("message", (message) => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 	if (message.content.startsWith(config.prefix + "sell")) {
-		let atributes = message.content.split(config.prefix + "rankme ")[1];
-		let atributes = atributes.split(" ");
+		let atributes = message.content.split(config.prefix + "sell ")[1];
+		let atr = atributes.split(" ");
 		message.channel.send(atr);
 	}
 	
