@@ -38,7 +38,7 @@ client.on("message", (message) => {
   				}
 				  .then (function(message){
 				    	message.reaction("👍")
-				  });
+				  })
 			});
 	}
 
