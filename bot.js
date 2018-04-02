@@ -27,7 +27,7 @@ client.on("message", (message) => {
       					},
       					{
         				name: "Objeto que se pide a cambio",
-        				value: atr[2] + " x" + atr[1]
+        				value: atr[2] + " x" + atr[3]
       					}
     					],
     					timestamp: new Date(),
