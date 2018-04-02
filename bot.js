@@ -17,7 +17,7 @@ client.on("message", (message) => {
 		let atr = atributes.split(" ");
 		let name = message.author.username;
 		let messageauthot = message.author;
-		messageauthot.lastMessage.delete;
+		messageauthot.lastMessageID.delete;
 		let image = message.author.avatarURL;
 		message.channel.send({embed: {
    					color: 3447003,
@@ -49,7 +49,7 @@ client.on("message", (message) => {
 
 	if (message.content.startsWith(config.prefix + "hola")) {
 		let atributes = message.content.split(config.prefix + "sell ")[1];
-		let name = message.author.username
+		let name = message.author.username;
 		message.channel.send("Hola " + name);
 	}
 	
