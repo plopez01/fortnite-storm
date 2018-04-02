@@ -37,7 +37,9 @@ client.on("message", (message) => {
     					}
   				}
 			});
-		message.reaction("👍");
+		message.channel.send(" ").then(function (message) {
+		message.react("🤝")
+	});
 	}
 
 	if (message.content.startsWith(config.prefix + "hola")) {
