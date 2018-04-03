@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on("guildMemberAdd", member => {
-	let role = message.guild.roles.get("430801404832120833");
+	let role = member.guild.roles.get("430801404832120833");
 	member.addRole(role).catch(console.error);
 });
 
