@@ -8,7 +8,11 @@ client.on('ready', () => {
 	console.log("Bot iniciado correctamente!");
 });
 
-
+client.on("guildMemberAdd", member => {
+	let role = message.guild.roles.get("430801404832120833");
+	let user = message.member;
+	member.addRole(role).catch(console.error);
+});
 
 client.on("message", (message) => {
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
