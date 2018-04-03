@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on("guildMemberAdd", member => {
-	let role = member.guild.roles.get("430801404832120833");
+	let role = member.guild.roles.find("name", "🌲 Bosque pedregoso 🌲");
 	member.addRole(role).catch(console.error);
 });
 
