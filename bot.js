@@ -18,7 +18,7 @@ client.on("message", (message) => {
 	if (msg.includes("HTTPS://DISCORD.GG/")) {
 		let channelLogs = message.guild.channels.get("428669999188803586");
         	message.delete(1000);
-		message.channelLogs.send({embed: {
+		channelLogs.send({embed: {
    					color: 3447003,
    					author: {
       					name: "Invitacion de discord",
