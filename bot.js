@@ -19,6 +19,12 @@ client.on("message", (message) => {
 	//Variables
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	
+	if (message.content.startsWith("https://discord.gg/")) {
+        message.delete(1000);
+		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
+	}
+	
+	
 	if (msg.startsWith(config.prefix + "SELL")) {
 		message.delete();
 		let atributes = msg.split(config.prefix + "SELL ")[1];
@@ -53,10 +59,6 @@ client.on("message", (message) => {
 		
 	}
 
-	if (message.content.startsWith("https://discord.gg/")) {
-        message.delete(1000);
-		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
-	}
 	 if (msg.startsWith(config.prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         let cont = message.content.slice(config.prefix.length).split(" ");
