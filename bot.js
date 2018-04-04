@@ -6,7 +6,6 @@ client.on('ready', () => {
 	console.log(`[Start] ${new Date()}`); //Hora a la que se inicio el server
 	client.user.setActivity('Surviving the storm')
     console.log("Bot iniciado correctamente!");
-    let blacklist = ["HTTPS://DIDCORD.GG"];
 });
 
 client.on("guildMemberAdd", member => {
@@ -54,7 +53,7 @@ client.on("message", (message) => {
 		
 	}
 
-	if (blacklist.includes(msg)) {
+	if (msg.startsWith("https://discord.gg/")) {
         message.delete(1000);
 		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
 	}
