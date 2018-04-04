@@ -14,7 +14,7 @@ client.on("guildMemberAdd", member => {
 });
 
 client.on("message", (message) => {
-	if (message.content.startsWith("https://discord.gg/")) {
+	if (message.content.includes("https://discord.gg/")) {
 		console.log("SE EJECTO LAS COZA EZTAS XD");
         	message.delete(1000);
 		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
