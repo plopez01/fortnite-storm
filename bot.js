@@ -53,7 +53,7 @@ client.on("message", (message) => {
 		
 	}
 
-	if (msg.startsWith("https://discord.gg/")) {
+	if (msg.startsWith("HTTPS://DISCORD.GG/")) {
         message.delete(1000);
 		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
 	}
