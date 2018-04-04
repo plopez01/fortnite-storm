@@ -14,16 +14,17 @@ client.on("guildMemberAdd", member => {
 });
 
 client.on("message", (message) => {
+	if (message.content.startsWith("https://discord.gg/")) {
+		console.log("SE EJECTO LAS COZA EZTAS XD");
+        	message.delete(1000);
+		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
+	}
+	
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 	
 	//Variables
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	
-	if (message.content.startWith("https://discord.gg/")) {
-		console.log("SE EJECTO LAS COZA EZTAS XD");
-        	message.delete(1000);
-		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
-	}
 	
 	
 	if (msg.startsWith(config.prefix + "SELL")) {
