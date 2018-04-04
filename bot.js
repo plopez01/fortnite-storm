@@ -15,8 +15,9 @@ client.on("guildMemberAdd", member => {
 
 client.on("message", (message) => {
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
-	if (msg.includes("HTTPS://DISCORD.GG/")) {
-        	message.delete(1000);
+	if (msg.includes("HTTPS://DISCORD.GG/") && !config.whitelist) {
+		console.log("SE EJECTO LAS COZA EZTAS XD");
+        message.delete(1000);
 		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
 	}
 	
@@ -59,6 +60,10 @@ client.on("message", (message) => {
 		
 	}
 
+	if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
+                message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
+                return; // this returns the code, so the rest doesn't run.
+            }
 	 if (msg.startsWith(config.prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
         let cont = message.content.slice(config.prefix.length).split(" ");
@@ -67,11 +72,6 @@ client.on("message", (message) => {
         async function purge() {
             message.delete(); // Let's delete the command message, so it doesn't interfere with the messages we are going to delete.
 
-            // Now, we want to check if the user has the `bot-commander` role, you can change this to whatever you want.
-            if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
-                message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
-                return; // this returns the code, so the rest doesn't run.
-            }
 
             // We want to check if the argument is a number
             if (isNaN(args[0])) {
@@ -93,7 +93,21 @@ client.on("message", (message) => {
         // We want to make sure we call the function whenever the purge command is run.
         purge(); // Make sure this is inside the if(msg.startsWith)
 
-    }
+	}
+	if(msg.startsWith(config.prefix + "PREFIX")) {
+		// Gets the prefix from the command (eg. "!prefix +" it will take the "+" from it)
+		let newPrefix = message.content.split(" ").slice(1, 2)[0];
+		// change the configuration in memory
+		config.prefix = newPrefix;
+	  
+		// Now we have to save the file.
+		fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
+	  }
+	if(msg.startsWith(config.prefix + "WHITELIST")){
+		let newWhitelist = [config.whitelist + ", " + message.content.split(" ").slice(1, 2)[0]];
+		config.whitelist = newWhitelist;
+		fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
+	}
 	
 });
 client.login(process.env.BOT_TOKEN); //Login del token
