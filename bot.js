@@ -5,7 +5,8 @@ const config = require("./config.json");
 client.on('ready', () => {
 	console.log(`[Start] ${new Date()}`); //Hora a la que se inicio el server
 	client.user.setActivity('Surviving the storm')
-	console.log("Bot iniciado correctamente!");
+    console.log("Bot iniciado correctamente!");
+    let blacklist = ["HTTPS://DIDCORD.GG"];
 });
 
 client.on("guildMemberAdd", member => {
@@ -53,10 +54,9 @@ client.on("message", (message) => {
 		
 	}
 
-	if (msg.startsWith(config.prefix + "HOLA")) {
-		let atributes = message.content.split(config.prefix + "sell ")[1];
-		let name = message.author.username;
-		message.channel.send("Hola " + name);
+	if (blacklist.includes(msg)) {
+        message.delete(1000);
+		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
 	}
 	 if (msg.startsWith(config.prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
         // We have to wrap this in an async since awaits only work in them.
