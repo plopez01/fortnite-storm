@@ -15,7 +15,7 @@ client.on("guildMemberAdd", member => {
 
 client.on("message", (message) => {
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
-	if (message.content.includes("https://discord.gg/")) {
+	if (msg.includes("HTTPS://DISCORD.GG/")) {
 		console.log("SE EJECTO LAS COZA EZTAS XD");
         	message.delete(1000);
 		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
