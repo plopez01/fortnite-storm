@@ -30,7 +30,7 @@ client.on("message", (message) => {
       					},
       					{
         				name: "Canal y hora a la que se ralizo la infraccion",
-        				value: message.channel + " " + new Date();
+        				value: message.channel + " " + new Date()
       					}
     					],
     					timestamp: new Date(),
