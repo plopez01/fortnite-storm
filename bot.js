@@ -16,9 +16,30 @@ client.on("guildMemberAdd", member => {
 client.on("message", (message) => {
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	if (msg.includes("HTTPS://DISCORD.GG/")) {
-		console.log("SE EJECTO LAS COZA EZTAS XD");
+		let channelLogs = message.channels.get("428669999188803586");
         	message.delete(1000);
-		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
+		message.channelLogs.send({embed: {
+   					color: 3447003,
+   					author: {
+      					name: "Invitacion de discord",
+      					icon_url: message.author.iconURL
+    					},
+    					fields: [{
+        					name: "Infractor",
+        					value: message.author.username
+      					},
+      					{
+        				name: "Canal y hora a la que se ralizo la infraccion",
+        				value: message.channel + " " + new Date();
+      					}
+    					],
+    					timestamp: new Date(),
+    					footer: {
+      					icon_url: client.user.avatarURL,
+      					text: "© Fortnite ESP"
+    					}
+  				}
+			});
 	}
 	
 	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
