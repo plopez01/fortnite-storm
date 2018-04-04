@@ -20,7 +20,8 @@ client.on("message", (message) => {
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	
 	if (message.content.startsWith("https://discord.gg/")) {
-        message.delete(1000);
+		console.log("SE EJECTO LAS COZA EZTAS XD");
+        	message.delete(1000);
 		message.channel.send("Invitacion de discord detectada, muteando a @" + message.author.username);
 	}
 	
