@@ -5,7 +5,7 @@ const config = require("./config.json");
 client.on('ready', () => {
 	console.log(`[Start] ${new Date()}`); //Hora a la que se inicio el server
 	client.user.setActivity('Surviving the storm')
-    console.log("Bot iniciado correctamente!");
+    	console.log("Bot iniciado correctamente!");
 });
 
 client.on("guildMemberAdd", member => {
@@ -16,7 +16,7 @@ client.on("guildMemberAdd", member => {
 client.on("message", (message) => {
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	if (msg.includes("HTTPS://DISCORD.GG/")) {
-		let channelLogs = message.guild.channels.get("428669999188803586");
+		let channelLogs = client.channels.get("428669999188803586");
 		console.log(channelLogs);
         	message.delete(1000);
 		channelLogs.send({embed: {
