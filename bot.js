@@ -15,7 +15,7 @@ client.on("guildMemberAdd", member => {
 
 client.on("message", (message) => {
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
-	if (msg.includes("HTTPS://DISCORD.GG/")) {
+	if (msg.includes("HTTPS://DISCORD.GG/") && !" https://discord.gg/UDaDR2j" && !"https://discord.gg/S7qRRJm" && !"https://discord.gg/PWM2q2V") {
 		let channelLogs = client.channels.get("428669999188803586");
 		console.log(channelLogs);
         	message.delete(1000);
