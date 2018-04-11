@@ -83,7 +83,7 @@ client.on("message", (message) => {
 		message.react("🤝")
 	});
 		
-	}else if(message.channel.id != "430457656470142983"){
+	}else if(!message.member.roles.find("name", "Staff")){
 		message.delete();
 		message.channel.send("Comandos en #Comandos");
 	}
