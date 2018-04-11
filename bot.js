@@ -14,6 +14,7 @@ client.on("guildMemberAdd", member => {
 });
 
 client.on("message", (message) => {
+	let canalComandos = client.channels.get("428654624082362378")
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	if (msg.includes("HTTPS://DISCORD.GG/")) {
 		if (!msg.includes("HTTPS://DISCORD.GG/UDADR2J" || "HTTPS://DISCORD.GG/S7QRRJM" || "HTTPS://DISCORD.GG/PWM2Q2V")){
@@ -50,7 +51,7 @@ client.on("message", (message) => {
 	//Variables	
 	
 	
-	if (msg.startsWith(config.prefix + "SELL")) {
+	if (msg.startsWith(config.prefix + "SELL") && message.channel.id == "430457656470142983") {
 		message.delete();
 		let atributes = msg.split(config.prefix + "SELL ")[1];
 		let atr = atributes.split(" ");
@@ -82,6 +83,9 @@ client.on("message", (message) => {
 		message.react("🤝")
 	});
 		
+	}else{
+		message.delete();
+		message.channel.send("Comandos en #Comandos");
 	}
 
 	if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
