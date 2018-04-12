@@ -15,7 +15,7 @@ client.on("guildMemberAdd", member => {
 
 client.on("message", (message) => {
 	if (message.content.startsWith(config.prefix + "polvo")){
-		message.channel.send(":polvo:");
+		message.channel.send("<a:$polvo:$Mineral_powder_icon>");
 	}
 
 	if (message.member.roles.find("name", "🔰 Reclutas 🔰")){
