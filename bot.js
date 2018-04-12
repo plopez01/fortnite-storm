@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on("guildMemberAdd", member => {
-	let role = member.guild.roles.find("name", "🌲 Bosque pedregoso 🌲");
+	let role = member.guild.roles.find("name", "🔰 Reclutas 🔰");
 	member.addRole(role).catch(console.error);
 });
 
@@ -17,7 +17,7 @@ client.on("message", (message) => {
 	let canalComandos = client.channels.get("428654624082362378")
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	if (msg.includes("HTTPS://DISCORD.GG/")) {
-		if (!msg.includes("HTTPS://DISCORD.GG/UDADR2J"){
+		if (!msg.includes("HTTPS://DISCORD.GG/UDADR2J")){
 			if (!msg.includes("HTTPS://DISCORD.GG/S7QRRJM")){
 				let channelLogs = client.channels.get("428669999188803586");
 				console.log(channelLogs);
