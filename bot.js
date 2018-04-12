@@ -17,7 +17,7 @@ client.on("message", (message) => {
 	let canalComandos = client.channels.get("428654624082362378")
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	if (msg.includes("HTTPS://DISCORD.GG/")) {
-		if (!msg.includes("HTTPS://DISCORD.GG/UDADR2J" || "HTTPS://DISCORD.GG/S7QRRJM" || "HTTPS://DISCORD.GG/PWM2Q2V")){
+		if (!msg.includes("HTTPS://DISCORD.GG/UDADR2J" && "HTTPS://DISCORD.GG/S7QRRJM" && "HTTPS://DISCORD.GG/PWM2Q2V")){
 			let channelLogs = client.channels.get("428669999188803586");
 			console.log(channelLogs);
         		message.delete(1000);
