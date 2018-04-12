@@ -16,7 +16,7 @@ client.on("guildMemberAdd", member => {
 client.on("message", (message) => {
 
 	if (message.member.roles.find("name", "🔰 Reclutas 🔰")){
-		if (message.content.toUpperCase = "ACCEPT"){
+		if (message.content.toUpperCase == "ACCEPT"){
 			message.delete(1000);
 			let member = message.member;
 			let role = member.guild.roles.find("name", "🔰 Reclutas 🔰");
