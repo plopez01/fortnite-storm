@@ -14,6 +14,20 @@ client.on("guildMemberAdd", member => {
 });
 
 client.on("message", (message) => {
+
+	if (message.member.roles.find("name", "🔰 Reclutas 🔰")){
+		if (message.content.toUpperCase = "ACCEPT"){
+			message.delete(1000);
+			let member = message.member;
+			let role = member.guild.roles.find("name", "🔰 Reclutas 🔰");
+			let role2 = member.guild.roles.find("name", "🌲 Bosque pedregoso 🌲");
+			member.removeRole(role).catch(console.error);
+			member.addRole(role2).catch(console.error);
+		} else {
+			message.delete(1000);
+		}
+
+	}
 	let canalComandos = client.channels.get("428654624082362378")
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
 	if (msg.includes("HTTPS://DISCORD.GG/")) {
