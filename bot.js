@@ -149,6 +149,7 @@ client.on("message", (message) => {
 	  
 		// Now we have to save the file.
 		fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
+		message.channel.send("Prefix cambiado " + newPrefix);
 	  }
 
 });
