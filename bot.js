@@ -104,6 +104,11 @@ client.on("message", (message) => {
 	});
 		
 	}
+	if (msg.startsWith(config.prefix + "NIVEL")){
+		let atr = message.content.split(" ")[1];
+		let nombre = message.author.username + "⚡" + atr;
+		message.channel.send("Nivel acualizado :white_check_mark: ")
+	}
 
 	 if (msg.startsWith(config.prefix + 'CLEAR')) { 
 		if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
