@@ -111,7 +111,7 @@ client.on("message", (message) => {
 		message.channel.send("Nivel acualizado :white_check_mark: ")
 	}
 
-	 if (msg.startsWith(config.prefix + 'CLEAR')) { 
+	 if (msg.startsWith(config.prefix + 'PURGE')) { 
 		if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
 			message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
 			return;
