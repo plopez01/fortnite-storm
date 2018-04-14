@@ -103,17 +103,12 @@ client.on("message", (message) => {
 		message.react("🤝")
 	});
 		
-	}else if(!message.member.roles.find("name", "Staff")){
-		message.delete();
-		message.channel.send("Comandos en #Comandos");
 	}
 
-	if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
-                message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
-                return; // this returns the code, so the rest doesn't run.
-            }
-	 if (msg.startsWith(config.prefix + 'CLEAR')) { // This time we have to use startsWith, since we will be adding a number to the end of the command.
-        // We have to wrap this in an async since awaits only work in them.
+	 if (msg.startsWith(config.prefix + 'CLEAR')) { 
+		if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
+			message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
+			return;
         let cont = message.content.slice(config.prefix.length).split(" ");
         let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
 
