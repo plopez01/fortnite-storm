@@ -107,6 +107,7 @@ client.on("message", (message) => {
 	if (msg.startsWith(config.prefix + "NIVEL")){
 		let atr = message.content.split(" ")[1];
 		let nombre = message.author.username + "⚡" + atr;
+		client.setNickname(nombre);
 		message.channel.send("Nivel acualizado :white_check_mark: ")
 	}
 
