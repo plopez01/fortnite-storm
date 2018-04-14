@@ -136,6 +136,7 @@ client.on("message", (message) => {
         // We want to make sure we call the function whenever the purge command is run.
         purge(); // Make sure this is inside the if(msg.startsWith)
 
+		}
 	}
 	if(msg.startsWith(config.prefix + "PREFIX")) {
 		// Gets the prefix from the command (eg. "!prefix +" it will take the "+" from it)
