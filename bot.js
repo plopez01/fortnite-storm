@@ -18,7 +18,7 @@ client.on("message", (message) => {
 	}
 		let servidor = client.guilds.get("428649304983470083")
 		let usuarios = servidor.members;
-		console.log(usuarios).length;
+		console.log(usuarios.length);
 		let a1 = [];
 		for (x = 0; x <= usuarios.length; ++x){
 			if(usuarios[x]._roles.has("428649304983470083")){
