@@ -16,7 +16,6 @@ client.on("message", (message) => {
 			message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
 			return;
 	}
-		let membersWithRole = message.guild.roles.get("436952809204744195").members;
 		let servidor = client.guilds.get("428649304983470083")
 		let usuarios = servidor.members;
 		let a1 = [];
