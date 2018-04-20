@@ -96,12 +96,12 @@ if (message.member.roles.get("436951781751259146")){ //Visitante
 	});
 		
 	}
-	if (msg.startsWith(config.prefix + "NIVEL")){
+	if (msg.startsWith(config.prefix + "NIVEL") && message.channel.id == "434702115626287111"){
 		let atr = message.content.split(" ")[1];
 		let nombre = message.author.username + "⚡" + atr;
 		message.member.setNickname(nombre);
-		message.channel.send("Nivel acualizado :white_check_mark: ")
-	}
+		message.channel.send("Nivel acualizado :white_check_mark: ");
+	} else {message.channel.send("Comandos en #respondebot👾");}
 
 	 if (msg.startsWith(config.prefix + 'PURGE')) { 
 		if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
