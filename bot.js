@@ -15,8 +15,11 @@ client.on("guildMemberAdd", member => {
 });
 
 client.on("message", (message) => {
-	if (message.content.startsWith(config.prefix + "polvo")){
-		message.channel.send("<a:$polvo:$Mineral_powder_icon>");
+	if (message.content.startsWith(config.prefix + "cambiar")){
+		if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
+			message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
+			return;
+		}
 	}
 
 	if (message.member.roles.find("name", "🔰 Reclutas 🔰")){
@@ -115,6 +118,7 @@ client.on("message", (message) => {
 		if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
 			message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
 			return;
+		}
         let cont = message.content.slice(config.prefix.length).split(" ");
         let args = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
 
