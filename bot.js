@@ -12,8 +12,11 @@ client.on('ready', () => {
 
 client.on("message", (message) => {
 	if (message.content.startsWith(config.prefix + "cambiar")){
-		let roleID = "436952809204744195";
-		let membersWithRole = message.guild.roles.get(roleID).members;
+		if (!message.member.roles.find("name", "Staff")) { // This checks to see if they DONT have it, the "!" inverts the true/false
+			message.channel.send('Neccesitasel rol \`Staff\` para usar ese comando.'); // This tells the user in chat that they need the role.
+			return;
+	}
+		let membersWithRole = message.guild.roles.get("436952809204744195").members;
 		for(i = 0; i <= membersWithRole.length; ++i){
 			if(!membersWithRole[i].roles.has("436953528926208012")){
 				membersWithRole[i].addRole("436953643846074387").catch(console.error);
