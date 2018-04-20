@@ -9,22 +9,28 @@ client.on('ready', () => {
     	console.log("Bot iniciado correctamente!");
 });
 
-client.on("guildMemberAdd", member => {
-	let role = member.guild.roles.find("name", "🔰 Reclutas 🔰");
-	member.addRole(role).catch(console.error);
-});
 
 client.on("message", (message) => {
 	if (message.content.startsWith(config.prefix + "cambiar")){
-		console.log("nada");
+		let roleID = "436952809204744195";
+		let membersWithRole = message.guild.roles.get(roleID).members;
+		for(i = 0; i <= membersWithRole.length; ++i){
+			if(!membersWithRole[i].roles.has("436953528926208012")){
+				membersWithRole[i].addRole("436953643846074387").catch(console.error);
+				membersWithRole[i].removeRole("436952809204744195").catch(console.error);
+				if(membersWithRole[i].roles.has("436952752342433802")){
+					membersWithRole[i].removeRole("436952752342433802").catch(console.error);
+				}
+			}
+		}
 	}
 
-	if (message.member.roles.find("name", "🔰 Reclutas 🔰")){
+	if (message.member.roles.get("436951781751259146")){ //Visitante
 		if (message.content == "aceptar"){
 			message.delete(1000);
 			let member = message.member;
-			let role = member.guild.roles.find("name", "🔰 Reclutas 🔰");
-			let role2 = member.guild.roles.find("name", "🌲 Bosque pedregoso 🌲");
+			let role = member.guild.roles.get("436953643846074387");
+			let role2 = member.guild.roles.get("436951781751259146");
 			member.removeRole(role).catch(console.error);
 			member.addRole(role2).catch(console.error);
 		} else {
