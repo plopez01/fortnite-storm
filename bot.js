@@ -21,15 +21,15 @@ client.on("message", (message) => {
 		console.log(usuarios);
 		let a1 = [];
 		for (x = 0; x <= usuarios.length; ++x){
-			if(usuarios[x].roles.has("428649304983470083")){
+			if(usuarios[x]._roles.has("428649304983470083")){
 			a1.push(usuarios[x]);
 			}
 		}
 		for(i = 0; i <= a1.length; ++i){
-			if(!a1[i].roles.has("436953528926208012")){
+			if(!a1[i]._roles.has("436953528926208012")){
 				a1[i].addRole("436953643846074387").catch(console.error);
 				a1[i].removeRole("436952809204744195").catch(console.error);
-				if(a1[i].roles.has("436952752342433802")){
+				if(a1[i]._roles.has("436952752342433802")){
 					a1[i].removeRole("436952752342433802").catch(console.error);
 				}
 			}
