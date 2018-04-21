@@ -11,12 +11,12 @@ client.on('ready', () => {
 
 
 client.on("message", (message) => {
-if (message.member.roles.get("437189623442178049")){ //Visitante
+if (message.member.roles.find("name", "👤 Visitante 👤")){ //Visitante
 		if (message.content == "aceptar"){
 			message.delete(1000);
 			let member = message.member;
-			let role = member.guild.roles.get("437189623442178049");
-			let role2 = member.guild.roles.get("437189816741003276");
+			let role = member.guild.roles.find("name", "👤 Visitante 👤");
+			let role2 = member.guild.roles.find("name", "🐣 Recluta 🐣");
 			member.removeRole(role).catch(console.error);
 			member.addRole(role2).catch(console.error);
 		} else {
