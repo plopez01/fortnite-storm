@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 
 client.on("message", (message) => {
-if (message.member.roles.get("436951781751259146")){ //Visitante
+if (message.member.roles.get("434765196368805908")){ //Visitante
 		if (message.content == "aceptar"){
 			message.delete(1000);
 			let member = message.member;
