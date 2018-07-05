@@ -11,18 +11,20 @@ client.on('ready', () => {
 
 
 client.on("message", (message) => {
-if (message.member.roles.find("name", "👤 Visitante 👤")){ //Visitante
-		if (message.content == "aceptar"){
-			message.delete(1000);
-			let member = message.member;
-			let role = member.guild.roles.find("name", "👤 Visitante 👤");
-			let role2 = member.guild.roles.find("name", "🐣 Recluta 🐣");
-			member.removeRole(role).catch(console.error);
-			member.addRole(role2).catch(console.error);
-		} else {
-			message.delete(1000);
-		}
+if (message.member.roles.find("name", "👤 Visitante 👤") != null){
+	if (message.member.roles.find("name", "👤 Visitante 👤")){ //Visitante
+			if (message.content == "aceptar"){
+				message.delete(1000);
+				let member = message.member;
+				let role = member.guild.roles.find("name", "👤 Visitante 👤");
+				let role2 = member.guild.roles.find("name", "🐣 Recluta 🐣");
+				member.removeRole(role).catch(console.error);
+				member.addRole(role2).catch(console.error);
+			} else {
+				message.delete(1000);
+			}
 
+		}
 	}
 	let canalComandos = client.channels.get("428654624082362378")
 	let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
