@@ -11,7 +11,7 @@ client.on('ready', () => {
 
 
 client.on("message", (message) => {
-if (message.member.roles.find("name", "👤 Visitante 👤") != null){
+if (message.member != null){
 	if (message.member.roles.find("name", "👤 Visitante 👤")){ //Visitante
 			if (message.content == "aceptar"){
 				message.delete(1000);
