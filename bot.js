@@ -104,7 +104,7 @@ if (message.member != null){
 			if(atr != undefined || null && isNaN){
 				let nombre = message.author.username + "⚡" + atr;
 				message.member.setNickname(nombre);
-				message.channel.send("Nivel acualizado :white_check_mark: ");
+				message.channel.send("Nivel actualizado :white_check_mark: ");
 			} else {message.channel.send("No puedes dejar el atributo vacio")}
 		} else {message.channel.send("No puedes dejar el atributo vacio")}
 	}
